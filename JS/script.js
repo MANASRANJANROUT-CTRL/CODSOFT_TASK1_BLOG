@@ -281,3 +281,188 @@ menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 
 });
+
+/* =========================
+   COMMENTS
+========================= */
+
+const commentForm =
+    document.getElementById("comment-form");
+
+const commentsList =
+    document.getElementById("comments-list");
+
+
+function getCurrentPostId() {
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    return params.get("id");
+
+}
+
+
+function getComments() {
+
+    const postId =
+        getCurrentPostId();
+
+    const storedComments =
+        localStorage.getItem(
+            `comments-${postId}`
+        );
+
+    return storedComments
+        ? JSON.parse(storedComments)
+        : [];
+
+}
+
+
+function saveComments(comments) {
+
+    const postId =
+        getCurrentPostId();
+
+    localStorage.setItem(
+        `comments-${postId}`,
+        JSON.stringify(comments)
+    );
+
+}
+
+
+function displayComments() {
+
+    const comments =
+        getComments();
+
+    commentsList.innerHTML = "";
+
+
+    if (comments.length === 0) {
+
+        commentsList.innerHTML = `
+            <p class="no-comments">
+                No comments yet. Be the first to share your thoughts!
+            </p>
+        `;
+
+        return;
+    }
+
+
+comments.forEach(comment => {
+
+    const commentElement =
+        document.createElement("article");
+
+    commentElement.className = "comment";
+
+
+    const header =
+        document.createElement("div");
+
+    header.className = "comment-header";
+
+
+    const author =
+        document.createElement("span");
+
+    author.className = "comment-author";
+
+    author.textContent = comment.name;
+
+
+    const date =
+        document.createElement("span");
+
+    date.className = "comment-date";
+
+    date.textContent = comment.date;
+
+
+    const text =
+        document.createElement("p");
+
+    text.className = "comment-text";
+
+    text.textContent = comment.text;
+
+
+    header.appendChild(author);
+
+    header.appendChild(date);
+
+    commentElement.appendChild(header);
+
+    commentElement.appendChild(text);
+
+    commentsList.appendChild(commentElement);
+
+});
+
+}
+
+
+commentForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+
+    const nameInput =
+        document.getElementById("comment-name");
+
+    const textInput =
+        document.getElementById("comment-text");
+
+
+    const name =
+        nameInput.value.trim();
+
+    const text =
+        textInput.value.trim();
+
+
+    if (!name || !text) {
+        return;
+    }
+
+
+    const comments =
+        getComments();
+
+
+    const newComment = {
+
+        name: name,
+
+        text: text,
+
+        date: new Date().toLocaleDateString(
+            undefined,
+            {
+                year: "numeric",
+                month: "short",
+                day: "numeric"
+            }
+        )
+
+    };
+
+
+    comments.unshift(newComment);
+
+
+    saveComments(comments);
+
+    displayComments();
+
+
+    commentForm.reset();
+
+});
+
+
+displayComments();

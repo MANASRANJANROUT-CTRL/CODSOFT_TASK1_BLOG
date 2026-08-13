@@ -1196,3 +1196,168 @@ body.dark .about-content p:last-child {
 body.dark .footer {
     background: #080808;
 }
+
+/* =========================
+   COMMENTS
+========================= */
+
+.comments-section {
+    padding: 90px 0;
+    background: #f8f8f6;
+}
+
+.comments-container {
+    max-width: 850px;
+}
+
+.comment-form {
+    margin-top: 35px;
+    padding: 30px;
+
+    background: white;
+    border: 1px solid #e5e5e5;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    background: white;
+    color: #181818;
+
+    outline: none;
+
+    resize: vertical;
+
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #181818;
+}
+
+.comment-submit {
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #181818;
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.comment-submit:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* Comment list */
+
+.comments-list {
+    margin-top: 45px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment {
+    padding: 24px;
+
+    background: white;
+    border: 1px solid #e5e5e5;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.comment-author {
+    font-weight: 700;
+}
+
+.comment-date {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.comment-text {
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* Empty state */
+
+.no-comments {
+    color: #888;
+    text-align: center;
+    padding: 30px;
+}
+
+
+/* =========================
+   DARK MODE COMMENTS
+========================= */
+
+body.dark .comments-section {
+    background: #111;
+}
+
+body.dark .comment-form,
+body.dark .comment {
+    background: #1b1b1b;
+    border-color: #2a2a2a;
+}
+
+body.dark .form-group input,
+body.dark .form-group textarea {
+    background: #111;
+    color: white;
+    border-color: #333;
+}
+
+body.dark .form-group input::placeholder,
+body.dark .form-group textarea::placeholder {
+    color: #777;
+}
+
+body.dark .comment-text {
+    color: #aaa;
+}
+
+body.dark .comment-submit {
+    background: white;
+    color: #111;
+}
