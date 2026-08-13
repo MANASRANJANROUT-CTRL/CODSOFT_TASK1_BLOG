@@ -165,11 +165,52 @@ const themeToggle =
     document.getElementById("theme-toggle");
 
 
+function updateThemeIcon() {
+
+    if (document.body.classList.contains("dark")) {
+
+        themeToggle.textContent = "☀️";
+
+    } else {
+
+        themeToggle.textContent = "🌙";
+
+    }
+
+}
+
+
 themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("dark");
 
+    const isDark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+    );
+
+    updateThemeIcon();
+
 });
+
+
+/* Load saved theme */
+
+const savedTheme =
+    localStorage.getItem("theme");
+
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+}
+
+
+updateThemeIcon();
 
 
 /* =========================
@@ -227,3 +268,16 @@ function typeSecondLine() {
 
 
 typeFirstLine();
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
