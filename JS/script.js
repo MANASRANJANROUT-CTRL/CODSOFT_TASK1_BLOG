@@ -169,3 +169,53 @@ themeToggle.addEventListener("click", () => {
 ========================= */
 
 displayPosts();
+
+
+/* =========================
+   HERO TYPEWRITER EFFECT
+========================= */
+
+const heroLine1 = document.getElementById("hero-line-1");
+const heroLine2 = document.getElementById("hero-line-2");
+
+const firstLine = "Stories worth";
+const secondLine = "reading.";
+
+let firstIndex = 0;
+let secondIndex = 0;
+
+
+function typeFirstLine() {
+
+    if (firstIndex < firstLine.length) {
+
+        heroLine1.textContent += firstLine.charAt(firstIndex);
+
+        firstIndex++;
+
+        setTimeout(typeFirstLine, 100);
+
+    } else {
+
+        setTimeout(typeSecondLine, 250);
+
+    }
+}
+
+
+function typeSecondLine() {
+
+    if (secondIndex < secondLine.length) {
+
+        heroLine2.textContent += secondLine.charAt(secondIndex);
+
+        secondIndex++;
+
+        setTimeout(typeSecondLine, 120);
+
+    }
+
+}
+
+
+typeFirstLine();
