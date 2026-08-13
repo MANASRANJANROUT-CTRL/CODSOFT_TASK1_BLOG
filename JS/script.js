@@ -1,6 +1,11 @@
 const postsContainer = document.getElementById("posts-container");
 const loadMoreButton = document.getElementById("load-more");
 const searchInput = document.getElementById("search-input");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+}
 
 let visiblePosts = 6;
 let currentCategory = "All";
@@ -167,45 +172,34 @@ const themeToggle =
 
 function updateThemeIcon() {
 
+    if (!themeToggle) return;
+
     if (document.body.classList.contains("dark")) {
-
         themeToggle.textContent = "☀️";
-
     } else {
-
         themeToggle.textContent = "🌙";
-
     }
 
 }
 
 
-themeToggle.addEventListener("click", () => {
+if (themeToggle) {
 
-    document.body.classList.toggle("dark");
+    themeToggle.addEventListener("click", () => {
 
-    const isDark =
-        document.body.classList.contains("dark");
+        document.body.classList.toggle("dark");
 
-    localStorage.setItem(
-        "theme",
-        isDark ? "dark" : "light"
-    );
+        const isDark =
+            document.body.classList.contains("dark");
 
-    updateThemeIcon();
+        localStorage.setItem(
+            "theme",
+            isDark ? "dark" : "light"
+        );
 
-});
+        updateThemeIcon();
 
-
-/* Load saved theme */
-
-const savedTheme =
-    localStorage.getItem("theme");
-
-
-if (savedTheme === "dark") {
-
-    document.body.classList.add("dark");
+    });
 
 }
 
