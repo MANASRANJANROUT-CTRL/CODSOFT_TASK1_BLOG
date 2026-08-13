@@ -466,3 +466,135 @@ commentForm.addEventListener("submit", event => {
 
 
 displayComments();
+
+/* =========================
+   SOCIAL SHARING
+========================= */
+
+const currentUrl = window.location.href;
+
+
+/* X */
+
+const shareX =
+    document.getElementById("share-x");
+
+if (shareX) {
+
+    shareX.addEventListener("click", () => {
+
+        const shareUrl =
+            `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}`;
+
+        window.open(
+            shareUrl,
+            "_blank",
+            "width=600,height=500"
+        );
+
+    });
+
+}
+
+
+/* LinkedIn */
+
+const shareLinkedIn =
+    document.getElementById("share-linkedin");
+
+if (shareLinkedIn) {
+
+    shareLinkedIn.addEventListener("click", () => {
+
+        const shareUrl =
+            `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
+
+        window.open(
+            shareUrl,
+            "_blank",
+            "width=600,height=600"
+        );
+
+    });
+
+}
+
+
+/* Copy Link */
+
+const shareCopy =
+    document.getElementById("share-copy");
+
+const copyMessage =
+    document.getElementById("copy-message");
+
+
+if (shareCopy) {
+
+    shareCopy.addEventListener("click", async () => {
+
+        try {
+
+            await navigator.clipboard.writeText(currentUrl);
+
+            copyMessage.textContent =
+                "✓ Article link copied!";
+
+            setTimeout(() => {
+
+                copyMessage.textContent = "";
+
+            }, 2500);
+
+        } catch (error) {
+
+            copyMessage.textContent =
+                "Unable to copy the link.";
+
+        }
+
+    });
+
+}
+
+
+/* Native Share */
+
+const shareNative =
+    document.getElementById("share-native");
+
+
+if (shareNative) {
+
+    if (!navigator.share) {
+
+        shareNative.style.display = "none";
+
+    } else {
+
+        shareNative.addEventListener("click", async () => {
+
+            try {
+
+                await navigator.share({
+
+                    title: document.title,
+
+                    text: "Check out this article on InkSpace.",
+
+                    url: currentUrl
+
+                });
+
+            } catch (error) {
+
+                // User cancelled the share dialog.
+                console.log("Share cancelled.");
+
+            }
+
+        });
+
+    }
+
+}

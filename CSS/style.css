@@ -1361,3 +1361,94 @@ body.dark .comment-submit {
     background: white;
     color: #111;
 }
+
+/* =========================
+   SOCIAL SHARING
+========================= */
+
+.sharing-section {
+    padding: 35px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.sharing-container {
+    max-width: 850px;
+}
+
+.sharing-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.share-btn {
+    padding: 11px 18px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    background: white;
+    color: #181818;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    background: #181818;
+    color: white;
+}
+
+.copy-message {
+    margin-top: 10px;
+
+    color: #5f7d22;
+    font-size: 0.85rem;
+    min-height: 20px;
+}
+
+
+/* Dark mode */
+
+body.dark .sharing-section {
+    border-color: #2a2a2a;
+}
+
+body.dark .share-btn {
+    background: #1b1b1b;
+    color: #eee;
+    border-color: #333;
+}
+
+body.dark .share-btn:hover {
+    background: white;
+    color: #111;
+}
+
+body.dark .copy-message {
+    color: #c7ff4a;
+}
+
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+    .sharing-buttons {
+        flex-direction: column;
+    }
+
+    .share-btn {
+        width: 100%;
+    }
+
+}
