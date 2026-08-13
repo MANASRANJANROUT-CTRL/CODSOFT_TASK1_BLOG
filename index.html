@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InkSpace - Stories Worth Reading</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                InkSpace
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#articles">Articles</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                🌙
+            </button>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+
+                <p class="hero-label">WELCOME TO INKSPACE</p>
+
+                <h1>
+                    Stories worth
+                    <span>reading.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover ideas, technology, creativity and stories
+                    from around the world.
+                </p>
+
+                <a href="#articles" class="hero-button">
+                    Explore Articles
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Featured Article -->
+        <section class="featured-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">FEATURED</p>
+                        <h2>Editor's Pick</h2>
+                    </div>
+                </div>
+
+                <article class="featured-card">
+
+                    <div class="featured-image">
+                        <div class="image-placeholder">
+                            FEATURED ARTICLE
+                        </div>
+                    </div>
+
+                    <div class="featured-content">
+
+                        <span class="category">
+                            Technology
+                        </span>
+
+                        <h3>
+                            The Future of Technology Is Being
+                            Built Today
+                        </h3>
+
+                        <p>
+                            Technology continues to change how we work,
+                            communicate and experience the world around us.
+                        </p>
+
+                        <div class="post-meta">
+                            <span>August 13, 2026</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+
+                        <a href="blog.html?id=1" class="read-more">
+                            Read Article →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Articles -->
+        <section class="articles-section" id="articles">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">EXPLORE</p>
+                        <h2>Latest Articles</h2>
+                    </div>
+
+                </div>
+
+
+                <!-- Search -->
+                <div class="search-container">
+
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="Search articles..."
+                        aria-label="Search articles"
+                    >
+
+                    <button id="search-button">
+                        Search
+                    </button>
+
+                </div>
+
+
+                <!-- Categories -->
+                <div class="categories" id="categories">
+
+                    <button class="category-btn active" data-category="All">
+                        All
+                    </button>
+
+                    <button class="category-btn" data-category="Technology">
+                        Technology
+                    </button>
+
+                    <button class="category-btn" data-category="Web Development">
+                        Web Development
+                    </button>
+
+                    <button class="category-btn" data-category="Design">
+                        Design
+                    </button>
+
+                    <button class="category-btn" data-category="Productivity">
+                        Productivity
+                    </button>
+
+                </div>
+
+
+                <!-- Blog Cards -->
+                <div class="posts-grid" id="posts-container">
+                    <!-- JavaScript will insert articles here -->
+                </div>
+
+
+                <!-- Load More -->
+                <div class="load-more-container">
+
+                    <button id="load-more" class="load-more-btn">
+                        Load More
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about-section" id="about">
+
+            <div class="container about-content">
+
+                <p class="section-label">ABOUT INKSPACE</p>
+
+                <h2>
+                    Ideas deserve a place
+                    to be shared.
+                </h2>
+
+                <p>
+                    InkSpace is a modern blog platform created to
+                    explore technology, design, development and
+                    productivity through simple and readable articles.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <h3>InkSpace</h3>
+                <p>Stories worth reading.</p>
+            </div>
+
+            <div>
+                <p>© 2026 InkSpace. All rights reserved.</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/posts.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
