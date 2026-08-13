@@ -39,6 +39,10 @@ input {
    NAVBAR
 ========================= */
 
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
     position: sticky;
     top: 0;
@@ -54,7 +58,9 @@ input {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    /* Keep logo on left */
+    justify-content: flex-start;
 }
 
 .logo {
@@ -63,14 +69,23 @@ input {
     letter-spacing: -1px;
 }
 
+
+/* Navigation links */
+
 .nav-links {
     display: flex;
-    gap: 32px;
+    align-items: center;
+
+    gap: 36px;
+
+    /* Push navigation toward the right */
+    margin-left: auto;
 }
 
 .nav-links a {
     font-size: 0.95rem;
     color: #555;
+
     transition: color 0.2s ease;
 }
 
@@ -78,19 +93,40 @@ input {
     color: #111;
 }
 
-.theme-toggle,
-.menu-toggle {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
+
+/* Dark mode button */
 
 .theme-toggle {
+    margin-left: 45px;
+
     font-size: 1.2rem;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
 }
+
+
+/* Mobile menu button */
 
 .menu-toggle {
     display: none;
+
+    margin-left: 18px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
     font-size: 1.5rem;
 }
 
@@ -211,6 +247,23 @@ input {
 
 .featured-image {
     min-height: 420px;
+
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.featured-card:hover .featured-image img {
+    transform: scale(1.03);
 }
 
 .image-placeholder {
@@ -348,69 +401,149 @@ input {
 
 .posts-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
+    gap: 28px;
 }
 
+
+/* =========================
+   CARD
+========================= */
+
 .post-card {
-    background: white;
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
     border: 1px solid #e5e5e5;
+    border-radius: 10px;
 
     overflow: hidden;
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transform: translateY(-7px);
+
+    border-color: #d5d5d5;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.10);
 }
+
+
+/* =========================
+   CARD IMAGE
+========================= */
 
 .post-image {
-    height: 210px;
+    width: 100%;
+    height: 220px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-shrink: 0;
+
+    overflow: hidden;
 
     background: #ddd;
-
-    color: #777;
-
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
+.post-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.post-card:hover .post-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
 .post-content {
-    padding: 24px;
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px;
+
+    flex: 1;
+}
+
+.post-content .category {
+    align-self: flex-start;
+
+    margin-bottom: 12px;
 }
 
 .post-content h3 {
-    margin: 12px 0;
+    margin: 5px 0 12px;
 
     font-size: 1.35rem;
-    line-height: 1.2;
+    line-height: 1.25;
+
+    letter-spacing: -0.5px;
 }
 
 .post-content p {
+    margin: 0 0 18px;
+
     color: #666;
-    font-size: 0.9rem;
+
+    font-size: 0.92rem;
+    line-height: 1.65;
 }
+
+
+/* =========================
+   DATE
+========================= */
 
 .post-date {
     display: block;
 
-    margin-top: 18px;
+    margin-top: auto;
+    margin-bottom: 18px;
 
     color: #888;
+
     font-size: 0.8rem;
 }
 
+
+/* =========================
+   READ MORE
+========================= */
+
+.post-content .read-more {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.post-content .read-more:hover {
+    color: #526d19;
+
+    transform: translateX(4px);
+}
 
 /* =========================
    LOAD MORE

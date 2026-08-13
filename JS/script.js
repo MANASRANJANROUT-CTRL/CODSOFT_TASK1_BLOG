@@ -48,36 +48,44 @@ function displayPosts() {
 
         card.innerHTML = `
 
-            <div class="post-image">
-                ${post.image.toUpperCase()}
-            </div>
+    <div class="post-image">
 
-            <div class="post-content">
+        <img
+            src="${post.image}"
+            alt="${post.title}"
+            loading="lazy"
+        >
 
-                <span class="category">
-                    ${post.category}
-                </span>
+    </div>
 
-                <h3>
-                    ${post.title}
-                </h3>
+    <div class="post-content">
 
-                <p>
-                    ${post.excerpt}
-                </p>
+        <span class="category">
+            ${post.category}
+        </span>
 
-                <span class="post-date">
-                    ${post.date}
-                </span>
+        <h3>
+            ${post.title}
+        </h3>
 
-                <br>
+        <p>
+            ${post.excerpt}
+        </p>
 
-                <a href="blog.html?id=${post.id}" class="read-more">
-                    Read Article →
-                </a>
+        <span class="post-date">
+            ${post.date}
+        </span>
 
-            </div>
-        `;
+        <a
+            href="blog.html?id=${post.id}"
+            class="read-more"
+        >
+            Read Article →
+        </a>
+
+    </div>
+
+`;
 
         postsContainer.appendChild(card);
     });

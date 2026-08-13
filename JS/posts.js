@@ -6,7 +6,7 @@ const posts = [
         category: "Technology",
         tags: ["Technology", "Future", "Innovation"],
         date: "August 13, 2026",
-        image: "post1",
+        image: "images/post1.jpg",
         excerpt:
             "Technology continues to change how we work, communicate and experience the world around us.",
         content: `
@@ -35,7 +35,7 @@ const posts = [
         category: "Web Development",
         tags: ["HTML", "CSS", "JavaScript"],
         date: "August 11, 2026",
-        image: "post2",
+        image: "images/post2.jpg",
         excerpt:
             "Good web design is about more than attractive colors and animations.",
         content: `
@@ -62,7 +62,7 @@ const posts = [
         category: "Design",
         tags: ["Design", "UI", "UX"],
         date: "August 9, 2026",
-        image: "post3",
+        image: "images/post3.jpg",
         excerpt:
             "Good design helps people understand and interact with products more easily.",
         content: `
@@ -84,7 +84,7 @@ const posts = [
         category: "Productivity",
         tags: ["Productivity", "Work", "Habits"],
         date: "August 7, 2026",
-        image: "post4",
+        image: "images/post4.jpg",
         excerpt:
             "Small changes to your daily routine can make a significant difference.",
         content: `
@@ -106,7 +106,7 @@ const posts = [
         category: "Web Development",
         tags: ["JavaScript", "Programming", "Beginner"],
         date: "August 5, 2026",
-        image: "post5",
+        image: "images/post5.jpg",
         excerpt:
             "JavaScript becomes much easier when you understand its fundamental concepts.",
         content: `
@@ -129,7 +129,7 @@ const posts = [
         category: "Design",
         tags: ["Responsive", "CSS", "Mobile"],
         date: "August 3, 2026",
-        image: "post6",
+        image: "images/post6.jpg",
         excerpt:
             "Websites need to work well on phones, tablets and desktop computers.",
         content: `
@@ -152,7 +152,7 @@ const posts = [
         category: "Productivity",
         tags: ["Learning", "Programming", "Growth"],
         date: "August 1, 2026",
-        image: "post7",
+        image: "images/post7.jpg",
         excerpt:
             "Learning programming is easier when you focus on consistent progress.",
         content: `
@@ -174,7 +174,7 @@ const posts = [
         category: "Web Development",
         tags: ["HTML", "Web", "Beginner"],
         date: "July 30, 2026",
-        image: "post8",
+        image: "images/post8.jpg",
         excerpt:
             "HTML provides the structure that forms the foundation of every webpage.",
         content: `
@@ -196,7 +196,7 @@ const posts = [
         category: "Design",
         tags: ["UI", "UX", "Design"],
         date: "July 28, 2026",
-        image: "post9",
+        image: "images/post9.jpg",
         excerpt:
             "Useful interfaces combine visual design with a clear understanding of users.",
         content: `
